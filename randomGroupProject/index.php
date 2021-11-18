@@ -18,7 +18,7 @@
     $O_controleur = new Controleur($S_controleur, $S_action);
 */
 
-    $S_urlADecortiquer = isset($_GET['url']) ? $_GET['url'] : null;
+    $S_urlADecortiquer = isset($_GET['route']) ? $_GET['route'] : null;
     $A_postParams = isset($_POST) ? $_POST : null;
 
     Vue::ouvrirTampon(); // on ouvre le tampon d'affichage, les contrôleurs qui appellent des vues les mettront dedans

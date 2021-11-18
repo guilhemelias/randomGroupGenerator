@@ -2,22 +2,24 @@
 
 
 class ClassStudent {
-    private int $capacity;
-    private array $listStudents;
+    private  $capacity;
+    private  $listStudents;
     
 
-    function __construct( int $capacity,array $students) {
+    function __construct( int $capacity=null,array $students=null) {
         $this->capacity=$capacity;
         $this->listStudents=$students;
     }
+
+    
 
 
 
     public function randomiseGroup(){
 
     }
-    public function displayClass(){
-
+    public function displayClass($text){
+      return $text;
     }
 
    

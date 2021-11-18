@@ -2,11 +2,11 @@
 
 final class ControleurHelloworld
 {
-    public function defautAction($id)
+    public function defautAction()
     {
         
         $O_helloworld =  new Helloworld();
-        Vue::montrer('helloworld/voir', array('helloworld' =>  $O_helloworld->donneMessage($id)));
+        Vue::montrer('helloworld/voir', array('helloworld' =>  $O_helloworld->donneMessage()));
 
     }
 

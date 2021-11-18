@@ -6,11 +6,11 @@ class Converter {
 
 
 
-    public function csvToArray($csvFile)
+    public function csvToArray($csvFile=null)
     {
         try
         {
-            $csvFile = array_map('str_getcsv', file('eleves.csv'));
+            $csvFile = array_map('str_getcsv', file('public/cv/eleves.csv'));
         }
         catch(Exception $e)
         {

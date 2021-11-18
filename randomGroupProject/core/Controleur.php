@@ -10,6 +10,7 @@ final class Controleur
 
     public function __construct ($S_url, $A_postParams)
     {
+        
         // On élimine l'éventuel slash en fin d'URL sinon notre explode renverra une dernière entrée vide
         if ('/' == substr($S_url, -1, 1)) {
             $S_url = substr($S_url, 0, strlen($S_url) - 1);
@@ -20,7 +21,7 @@ final class Controleur
 
         if (empty($A_urlDecortique[0])) {
             // Nous avons pris le parti de préfixer tous les controleurs par "Controleur"
-            $A_urlDecortique[0] = 'ControleurHelloworld';
+            $A_urlDecortique[0] = 'ControleurClass';
         } else {
             $A_urlDecortique[0] = 'Controleur' . ucfirst($A_urlDecortique[0]);
         }
