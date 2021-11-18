@@ -10,6 +10,9 @@ final class Controleur
 
     public function __construct ($S_url, $A_postParams)
     {
+
+
+        
         
         // On élimine l'éventuel slash en fin d'URL sinon notre explode renverra une dernière entrée vide
         if ('/' == substr($S_url, -1, 1)) {

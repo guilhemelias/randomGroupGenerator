@@ -1,28 +1,33 @@
 <?php
 
 
-class ClassStudent {
-    private  $capacity;
-    private  $listStudents;
+class ClassStudent extends Model{
+    private   $capacity=0;
+    private   $listStudents=[];
     
-
-    function __construct( int $capacity=null,array $students=null) {
-        $this->capacity=$capacity;
-        $this->listStudents=$students;
-    }
 
     
 
+    
+    
 
-
-    public function randomiseGroup(){
-
+    public function getStudent($csv)
+    {
+      $csvClass=$this->getCsvData($csv);
+      foreach ($csvClass as $value)
+      {
+        $student =  new Student($value[2],$value[1],$value[0]);
+        array_push($this->listStudents,$student);
+      }
+      
     }
+
+    
     public function displayClass($text){
       return $text;
     }
 
-   
+
     public function setCapacity(int $capacity)
     {
       $this->capacity=$capacity;

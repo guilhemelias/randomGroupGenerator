@@ -2,9 +2,9 @@
 
 
 class Student {
-    private string $firstName;
-    private string $lastName;
-    private EnumGender $gender;
+    private  $firstName;
+    private  $lastName;
+    private  $gender;
 
     function __construct( string $firstName,string $lastName,string $gender) {
         $this->firstName=$firstName;
@@ -46,7 +46,7 @@ class Student {
 
 
 
-    public function getGender() :EnumGender
+    public function getGender()
     {
       return $this->gender;
     }

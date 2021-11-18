@@ -1,8 +1,10 @@
 <?php
-
-foreach ($A_vue['class'] as $key=>$value){
-  echo "<p>" .$value[0]." ".$value[1]." ".$value[2]."</p>";
+if($A_vue['class']){
+  foreach ($A_vue['class'] as $student){
+    echo "<p>" .$student->getGender()." ".$student->getLastName()." ".$student->getFirstName()."</p>";
+  }
 }
+
 
 
 

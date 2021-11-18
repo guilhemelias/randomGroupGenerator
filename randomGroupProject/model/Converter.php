@@ -10,7 +10,7 @@ class Converter {
     {
         try
         {
-            $csvFile = array_map('str_getcsv', file('public/cv/eleves.csv'));
+            $csvFile = array_map('str_getcsv', file(($csvFile)));
         }
         catch(Exception $e)
         {
