@@ -28,9 +28,8 @@ if(isset($_POST["upload_csv"]))
 <header>
     <h1>Group randomizer</h1>
     <article>
-        <h2>Select CSV File</h2>
-        <form method="post" enctype="multipart/form-data"  >
-            <p>Select File</p>             
+        <h4>Select CSV File</h4>
+        <form method="post" enctype="multipart/form-data"  >            
             <input type="file" name="file" />
             <?php
             if($error != '')
@@ -38,6 +37,8 @@ if(isset($_POST["upload_csv"]))
                 echo '<p>'.$error.'</p>';
             }
             ?>
+            <h4>Select group capacity :</h4>
+            <input type="number" name="randomize" />
             <input type="submit"  name="upload_csv"  value="Upload" />
         </form>
     </article>

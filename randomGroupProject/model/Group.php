@@ -1,11 +1,28 @@
 <?php
 
-class Group extends ClassStudent{
+class Group {
 
+    private $capacity;
+    private $listStudents =[];
 
-    function __construct( int $capacity,array $students) {
-        parent::__construct($capacity,$students);
+    function __construct( int $capacity) {
+       $this->capacity=$capacity;
     }
-   
+
+
+    public function setStudent($students)
+    {
+        
+        foreach ($students as $student)
+      {
+        array_push($this->listStudents,$student);
+      }
+      
+    }
+
+    public function getListStudent() :array
+    {
+      return $this->listStudents;
+    }
     
 }

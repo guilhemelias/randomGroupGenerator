@@ -1,1 +1,1 @@
-<footer>Pied</footer>
+<footer></footer>

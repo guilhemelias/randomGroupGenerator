@@ -4,57 +4,69 @@
 
 
 
-class ControleurClass {
+class ControleurClass
+{
+    private $O_class;
 
-   private  $O_class;
+    public function __construct()
+    {
+        $this->O_class= new ClassStudent();
+    }
 
-   public function __construct(){
-      $this->O_class= new ClassStudent();
-   }
 
    public function defautAction()
    {
+      if (isset($_POST["upload_csv"])) {
+          $error = $this->displayClass();
+          if ($error) {
+              Vue::montrer('helloworld/class', array('class' =>  null,'error'=>$error));
+          } else {
+              $this->randomize((int)$_POST["randomize"]);
+              
+              Vue::montrer('helloworld/class', array('class' => $this->O_class->getClass($this->O_class->getListStudent()),'error'=>$error));
+              Vue::montrer('helloworld/groups', array('groups' => $this->O_class->getClass($this->O_class->getGroup()),'error'=>$error));
+          }
+      }
+   }
+
    
+
+   public function displayClass(){
       $error = '';
 
-      if(isset($_POST["upload_csv"]))
-      {
-         if($_FILES['file']['name'])
+      if($_FILES['file']['name'])
          {
             $file_array = explode(".", $_FILES['file']['name']);
             $extension = end($file_array);
             
             if($extension == 'csv')
             {
-               $file = $_FILES['file']['tmp_name'];
                
-               $this->O_class->getStudent($file);
-               $error='';
-              // Vue::montrer('helloworld/class', array('class' =>  $this->O_class->displayClass($this->O_class->getListStudent()),'error'=>$error));            
+               
+               $this->O_class->setStudent($_FILES['file']['tmp_name']);
+               $error=null;
+               return $error;
             }
             else
             {
                $error = 'Only <b>.csv</b> file allowed';
-               Vue::montrer('helloworld/class',array('class' =>  null,'error'=>$error));
+               return $error;
+               
             }
          }
-      }
-     // $O_creator = new Creator($csvClass); 
-     // $O_class=new ClassStudent();
-    //  $O_class->getStudent($file_data);
-    //  Vue::montrer('helloworld/class', array('class' =>  $O_class->displayClass($O_class->getListStudent()),'error'=>$error));
-
    }
 
 
 
-   public function randomizeAction(){
-      
-      echo $this->O_class;
-      
-      Vue::montrer('helloworld/class', array('class' =>  $this->O_class->displayClass($this->O_class->getListStudent()),'error'=>$this->error));
+   public function randomize(int $nbMax=3){
+       {
+         $studentArr = (array)$this->O_class->getClass($this->O_class->getListStudent());
+         
+         shuffle($studentArr); 
+         echo $nbMax;
+         $groupes = array_chunk($studentArr, $nbMax);
+         $this->O_class->setGroup($groupes,$nbMax);
    }
-
-   
+   } 
 
 }

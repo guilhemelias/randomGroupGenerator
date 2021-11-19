@@ -4,6 +4,7 @@
 class ClassStudent extends Model{
     private   $capacity=0;
     private   $listStudents=[];
+    private $listGroups=[];
     
 
     
@@ -11,9 +12,10 @@ class ClassStudent extends Model{
     
     
 
-    public function getStudent($csv)
+    public function setStudent($csv)
     {
       $csvClass=$this->getCsvData($csv);
+      $this->capacity=count($csvClass);
       foreach ($csvClass as $value)
       {
         $student =  new Student($value[2],$value[1],$value[0]);
@@ -22,8 +24,19 @@ class ClassStudent extends Model{
       
     }
 
+    public function setGroup($groups,$capacity)
+    {
+      
+      foreach ($groups as $group) {        
+          $newGroup= new Group($capacity);
+          $newGroup->setStudent($group);
+          array_push($this->listGroups,$newGroup);      
+    }
+      
+    }
+
     
-    public function displayClass($text){
+    public function getClass($text){
       return $text;
     }
 
@@ -46,6 +59,13 @@ class ClassStudent extends Model{
     public function getListStudent() :array
     {
       return $this->listStudents;
+    }
+
+    
+
+    public function getGroup() :array
+    {
+      return $this->listGroups;
     }
 
     
