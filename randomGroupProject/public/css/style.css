@@ -1,0 +1,78 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 1000px;
+    background-image:#99fff8;
+    background-image:  
+    radial-gradient(at 89% 68%, hsla(195,99%,66%,1) 0, transparent 40%),  
+    radial-gradient(at 98% 67%, hsla(75,93%,67%,1) 0, transparent 52%),  
+    radial-gradient(at 46% 42%, hsla(61,78%,75%,1) 0, transparent 41%),  
+    radial-gradient(at 60% 18%, hsla(17,79%,65%,1) 0, transparent 57%),  
+    radial-gradient(at 0% 71%, hsla(357,82%,75%,1) 0, transparent 52%),  
+    radial-gradient(at 43% 91%, hsla(220,84%,62%,1) 0, transparent 45%),  
+    radial-gradient(at 2% 22%, hsla(56,75%,76%,1) 0, transparent 54%);
+}
+
+
+
+
+
+h1.logo
+{
+    font-size:60px;
+    text-align: center;
+    line-height: 200px;
+    padding: 0 30px;
+
+}
+input{
+    background: rgba( 255, 255, 255, 0 );
+}
+.convert{
+    font-size: large;
+    background: rgba( 255, 255, 255, 0 );
+}
+
+.titleSection{
+    
+    font-size: large;
+    margin-bottom: 20px;
+    background: rgba( 255, 255, 255, 0 );
+}
+
+.results, .csvInput{
+    display:  flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.CTN {
+    
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    flex-direction: column;
+    border-radius: 20px;
+    border: black solid 1px;
+    padding: 30px;
+    text-align: center;
+    margin-top: 80px;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+
+    }
+
+    .glass {
+        background: rgba( 255, 255, 255, 0 );
+    }

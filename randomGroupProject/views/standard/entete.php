@@ -25,11 +25,16 @@ if(isset($_POST["upload_csv"]))
 ?>
 
 
-<header>
-    <h1>Group randomizer</h1>
-    <article>
-        <h4>Select CSV File</h4>
-        <form method="post" enctype="multipart/form-data"  >            
+
+
+
+
+<section class ="csvInput">
+<section class="CTN">
+<!-- Main -->
+    <article class="glass">
+        <h4 class="titleSection">Convert CSV to PDF</h4>
+        <form class="glass" method="post" enctype="multipart/form-data"  >
             <input type="file" name="file" />
             <?php
             if($error != '')
@@ -37,10 +42,14 @@ if(isset($_POST["upload_csv"]))
                 echo '<p>'.$error.'</p>';
             }
             ?>
-            <h4>Select group capacity :</h4>
-            <input type="number" name="randomize" />
+            
+            <p class="convert">Select group capacity (default is 3) :</p>
+            <input type="number" pattern="\^[0-9]*$" name="randomize" />
             <input type="submit"  name="upload_csv"  value="Upload" />
         </form>
     </article>
-</header>
+</section>
+</section>
+
+
 

@@ -2,11 +2,16 @@
 <html lang="fr">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>My sweet MVC</title>
+        <title>Random group generator from CSV file</title>
+        <link rel="stylesheet" href="public\css\style.css" />
     </head>
     <body>
-        <?php Vue::montrer('standard/entete'); ?>
-        <?php echo $A_vue['body'] ?>
-        <?php Vue::montrer('standard/pied'); ?>
+        <section class="container">
+        <h1 class="logo">Random group from csv file</h1>
+            <?php Vue::montrer('standard/entete'); ?>
+            <?php if (isset($A_vue['body'])) echo $A_vue['body'] ?>
+            <?php Vue::montrer('standard/pied'); ?>
+        </section>
+        
     </body>
-</html>
+</html> 
